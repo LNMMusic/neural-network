@@ -3,7 +3,7 @@ A neural network is a computational system that learns to perform tasks by analy
 
 ---
 
-## Components of a Neural Network
+## Composition
 **Static Components:**
 > **Neurons**: Neurons are individual computational units within a neural network. Each neuron holds a numerical value that represents its activation level. These values are computed based on inputs and determine the neuron's output.
 
@@ -20,6 +20,17 @@ A neural network is a computational system that learns to perform tasks by analy
 >**Activation Function**: Activation functions introduce non-linearity into the network and determine the level of activation of neurons in the next layer based on the weighted sum of their inputs. Common activation functions include ReLU, sigmoid, and tanh.
 
 >**Optimizer**: The optimizer is responsible for dynamically adjusting the synapses (weights and biases) during training to minimize the loss function. It guides the network toward finding optimal parameter values for better performance.
+
+---
+
+## Workflow (Training)
+> `Initializations`: The network is initialized with an `input layer`, `hidden layers`, and `output layer`. The `synapses` (weights and biases) are initialized with random values.
+
+> `Forward Propagatio`n: The network receives an input and performs forward propagation, computing the activation values of each neuron from the input layer to the output layer. At the end, the output layer has each neurons with its activation value calculated.
+
+> `Loss Calculation`: The network calculates the loss function based on the output layer's activation values and the expected output. This means how far off the network's prediction is from the expected output. For example: neuron 1 has an activation value of 0.8, but the expected output is 1.0. The loss function would be 0.2.
+
+> `Backward Propagation`: The network performs backward propagation, computing the gradient of the loss function with respect to the synapses (weights and biases) of each neuron. This means how much each synapse (weight and bias) contributed to the loss function. It updates the synapses (weights and biases) based on the gradient and the optimizer. This ensure that each layer has the optimal configuration of synapses (weights and biases) to minimize the loss function. We can think of it as a river flowing down a mountain. If the river doesn't flow to the specific location, we can adjust the river's path by adding rocks and dirt to the river, so when the river (acting as a signal) flows from the start to the end, it will flow to the specific location.
 
 ## Layer Representations as Interfaces:
 - Each layer in a neural network can be thought of as an interface:
