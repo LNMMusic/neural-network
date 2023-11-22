@@ -26,7 +26,7 @@ A neural network is a computational system that learns to perform tasks by analy
 ## Workflow (Training)
 > `Initializations`: The network is initialized with an `input layer`, `hidden layers`, and `output layer`. The `synapses` (weights and biases) are initialized with random values.
 
-> `Forward Propagatio`n: The network receives an input and performs forward propagation, computing the activation values of each neuron from the input layer to the output layer. At the end, the output layer has each neurons with its activation value calculated.
+> `Forward Propagation`: The network receives an input and performs forward propagation, computing the activation values of each neuron from the input layer to the output layer. At the end, the output layer has each neurons with its activation value calculated.
 
 > `Loss Calculation`: The network calculates the loss function based on the output layer's activation values and the expected output. This means how far off the network's prediction is from the expected output. For example: neuron 1 has an activation value of 0.8, but the expected output is 1.0. The loss function would be 0.2.
 

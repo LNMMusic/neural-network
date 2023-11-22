@@ -6,17 +6,17 @@ In the context of neural networks, backpropagation is the method used for learni
 
 The loss function, also known as cost or objective function, is a measure of how well the neural network performs. It quantifies the difference between the predicted outputs of the network and the actual target values. The goal of training a neural network is to minimize this loss function.
 
-The loss function, also known as cost or objective function, is a measure of the neural network's performance. It quantifies the difference between the network's predicted outputs (\( \hat{y} \)) and the actual target values (\( y \)). The goal of training is to minimize this loss function.
+The loss function, also known as cost or objective function, is a measure of the neural network's performance. It quantifies the difference between the network's predicted outputs ($\hat{y}$) and the actual target values ($y$). The goal of training is to minimize this loss function.
 
 ### Common Loss Functions
 
 - **Mean Squared Error (MSE)** for regression tasks:
-\[ \text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2 \]
-where \( y_i \) is the true value and \( \hat{y}_i \) is the predicted value from the network.
+$\text{MSE} = \frac{1}{n} \sum_{i=1}^{n} (y_i - \hat{y}_i)^2$
+where $y_i$ is the true value and $\hat{y}_i$ is the predicted value from the network.
 
 - **Cross-Entropy Loss** for classification tasks:
-\[ \text{Cross-Entropy} = -\sum_{c=1}^{M} y_{o,c} \log(p_{o,c}) \]
-where \( M \) is the number of classes, \( y \) is a binary indicator of whether class label \( c \) is the correct classification for observation \( o \), and \( p \) is the predicted probability that observation \( o \) is of class \( c \).
+$\text{Cross-Entropy} = -\sum_{c=1}^{M} y_{o,c} \log(p_{o,c})$
+where $M$ is the number of classes, $y$ is a binary indicator of whether class label $c$ is the correct classification for observation $o$, and $p$ is the predicted probability that observation $o$ is of class $c$.
 
 
 ### Landscape of Loss Functions
@@ -57,12 +57,12 @@ Optimization refers to the process of adjusting the weights and biases of the ne
 
 The most common optimization algorithm used in neural networks is gradient descent. The weights are updated as follows:
 
-\[ W_{new} = W_{old} - \eta \cdot \nabla L(W_{old}) \]
+$W_{new} = W_{old} - \eta \cdot \nabla L(W_{old})$
 
 where:
-- \( W_{new} \) and \( W_{old} \) are the new and old values of the weights, respectively.
-- \( \eta \) is the learning rate, a hyperparameter that controls the step size during the learning process.
-- \( \nabla L(W_{old}) \) is the gradient of the loss function with respect to the old weights.
+- $W_{new}$ and $W_{old}$ are the new and old values of the weights, respectively.
+- $\eta$ is the learning rate, a hyperparameter that controls the step size during the learning process.
+- $\nabla L(W_{old})$ is the gradient of the loss function with respect to the old weights.
 
 The learning rate in neural network training indeed acts as a control on the magnitude of weight updates during backpropagation. However, its primary purpose is not to prevent overfitting or underfitting directly; rather, it is to ensure that the optimization process progresses in a stable and efficient manner towards the minimum of the loss function. Here's a breakdown of its role:
 
@@ -98,18 +98,18 @@ There are more sophisticated optimization algorithms that adjust the learning ra
 
 ## Numerical Example
 
-Consider a simple neural network with a single neuron using mean squared error as the loss function. Suppose the neuron's current weight is \( W = 2 \), the true target value is \( y = 3 \), and the predicted value after the forward pass is \( \hat{y} = 1.5 \).
+Consider a simple neural network with a single neuron using mean squared error as the loss function. Suppose the neuron's current weight is $W = 2$, the true target value is $y = 3$, and the predicted value after the forward pass is $\hat{y} = 1.5$.
 
 The loss function is:
-\[ L = \frac{1}{2} (y - \hat{y})^2 = \frac{1}{2} (3 - 1.5)^2 = \frac{1}{2} \cdot 2.25 = 1.125 \]
+$L = \frac{1}{2} (y - \hat{y})^2 = \frac{1}{2} (3 - 1.5)^2 = \frac{1}{2} \cdot 2.25 = 1.125$
 
-The derivative of \( L \) with respect to \( W \) is:
-\[ \frac{\partial L}{\partial W} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial W} \]
-\[ \frac
+The derivative of $L$ with respect to $W$ is:
+$\frac{\partial L}{\partial W} = \frac{\partial L}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial W}$
+$\frac
 
-{\partial L}{\partial W} = -(y - \hat{y}) \cdot x = -(3 - 1.5) \cdot 1 = -1.5 \]
+{\partial L}{\partial W} = -(y - \hat{y}) \cdot x = -(3 - 1.5) \cdot 1 = -1.5$
 
-If we choose a learning rate \( \eta = 0.1 \), the weight update would be:
-\[ W_{new} = W_{old} - \eta \cdot \frac{\partial L}{\partial W} = 2 - 0.1 \cdot (-1.5) = 2 + 0.15 = 2.15 \]
+If we choose a learning rate $\eta = 0.1$, the weight update would be:
+$W_{new} = W_{old} - \eta \cdot \frac{\partial L}{\partial W} = 2 - 0.1 \cdot (-1.5) = 2 + 0.15 = 2.15$
 
 By iterating this process over many epochs, the network will gradually minimize the loss function, improving its predictions.
